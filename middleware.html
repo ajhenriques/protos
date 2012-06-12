@@ -8,14 +8,14 @@
 <meta name='keywords' content='mvc, web, application, framework, node, nodejs, node.js, js, javascript, restful, middleware' />
 
 <link rel="stylesheet" type="text/css" href="css/client.min.css" />
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" />
 </head>
 <body id="middleware">
   
 <div id="header" class="fw">
   <div class="wrap">
     <a id="logo" href="index.html"><img alt="Protos" width="325" height="75" src="images/logo.png" /></a>
-    <span>Web Application Framework for <a href="http://nodejs.org">node.js</a></span>
+    <span>Web Application Framework</span>
   </div><!-- .wrap -->
 </div><!-- header -->
 
@@ -24,9 +24,9 @@
     <li><a href="index.html">Features</a></li>
     <li><a href="guide.html">Guide</a></li>
     <li class="active"><a href="middleware.html">Middleware</a></li>
-    <li><a href="docs/index.html">API Docs</a></li>
-    <li><a href="https://groups.google.com/group/protos-web-framework">Support</a></li>
-    <li><a href="https://github.com/derdesign/protos">Github</a></li>
+    <li><a target="_blank" href="docs/index.html">API Docs</a></li>
+    <li><a target="_blank" href="https://groups.google.com/group/protos-web-framework">Support</a></li>
+    <li><a target="_blank" href="https://github.com/derdesign/protos">Github</a></li>
   </ul><!-- nav -->
 </div><!-- nav-wrap -->
 
@@ -59,6 +59,7 @@
 <li><strong>compile</strong> &nbsp; <em>Extensions to compile and/or watch.</em></li>
 <li><strong>compileExts</strong> &nbsp; <em>Object containing the target extensions of compiled assets. Contains {ext: outExt}</em></li>
 <li><strong>compilers</strong> &nbsp; <em>Object containing the functions that compile the target extensions.</em></li>
+<li><strong>ignore</strong> &nbsp; <em>Array containing a list of patterns to ignore.</em></li>
 <li><strong>uglifyOpts</strong> &nbsp; <em>UglifyJS options</em></li>
 </ul>
 
@@ -114,6 +115,33 @@ response will be sent upon access to such resources.</p>
 
 <p>This means that nobody will be able to access <em>print.less</em>, <em>js/client.js</em> or any of the files that are being merged. These
 files are automatically blocked, since their content is accessed via their minified/compiled counterparts.</p>
+
+<h3>Using the &ldquo;ignore&rdquo; option</h3>
+
+<p>The ignore option receives an array of patterns to exclude from compilation. These patterns are very similar to regular
+expressions, with the little detail that you can use pattern matching similar to the one you use on the Bash shell.</p>
+
+<p>Example patterns are:</p>
+
+<pre><code>hello/world/asset-*.css
+files/with/extension.*
+css/(bootstrap|skeleton)/[a-z]{1}*.(css|js)
+</code></pre>
+
+<p>These patterns only exclude the files matched by the pattern path. If you want to exclude <strong>all</strong> the files with a specific filename,
+then you would need a pattern like the following:</p>
+
+<pre><code>*(/?)variables.less
+</code></pre>
+
+<p>The pattern above will ignore all the files named <code>variables.less</code> found on any directory.</p>
+
+<p>This is an example of using the <code>ignore</code> option:</p>
+
+<pre><code>app.use('asset_compiler', {
+  ignore: ['variables/*.less', 'hello/world/asset-*.css', 'css/(bootstrap|skeleton)/[a-z]{1}*.(css|js)']
+});
+</code></pre>
 
 <h3>Debug Messages</h3>
 
