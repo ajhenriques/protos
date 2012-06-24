@@ -25,7 +25,7 @@
 <div id="doc3" class="yui-t2">
 	<div id="hd">
         <h1><a href="http://derdesign.github.com/protos" title="Protos Web Framework">Protos Web Framework</a></h1>
-        <h3>engines&nbsp; <span class="subtitle">0.0.7</span></h3>
+        <h3>engines&nbsp; <span class="subtitle">0.0.8</span></h3>
         <a href="./index.html" title="Protos Web Framework">Protos Web Framework</a> 
             &gt; <a href="./module_engines.html" title="engines">engines</a>
                 
@@ -62,7 +62,7 @@
   @namespace engine
  */
 
-var liquor = require('liquor'),
+var liquor = protos.requireDependency('liquor', 'Liquor Engine'),
     util = require('util');
 
 /**

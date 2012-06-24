@@ -80,6 +80,15 @@ jQuery and Prototype libraries, and store then in <em>myapp/public/js</em> and T
 <pre><code>$ protos create myapp --model users accounts --controller blog admin profile
 </code></pre>
 
+<p>Depending on the framework components you use, you may need to install one or more npm dependencies. Protos takes care of that
+for you, using its own component installer:</p>
+
+<pre><code>$ protos install mongodb redis mysql jade handlebars
+</code></pre>
+
+<p>The command above will install the dependencies needed for the components to work properly. Your <code>package.json</code> file is also
+automatically updated with the dependencies installed.</p>
+
 <p>For a full list of options and commands, run <code>protos --help</code>.</p>
 
 <h2>Creating Application Resources</h2>
@@ -622,9 +631,12 @@ when creating your applications. Here&rsquo;s what it looks like:</p>
 
 Protos.bootstrap(__dirname, {
 
+  // Application configuration
+  debugLog: false,
+
   // Server configuration
   server: {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8080,
     multiProcess: false,
     stayUp: false
@@ -633,25 +645,28 @@ Protos.bootstrap(__dirname, {
   // Application environments
   environments: {
     default: 'development',
-    development: function(app) {
-      app.debugLog = false;
+    development: function(app) { 
+      // Development environment code
     }
   },
 
   // Application events
   events: {
+    components: function(protos) {
+      // Load framework components
+      protos.loadDrivers();
+      protos.loadStorages();
+      protos.loadEngines('ejs');
+    },
+    pre_init: function(app) {
+      // Pre-initialization code
+    },
     init: function(app) {
-
       // Load middleware
       app.use('logger');
-      app.use('markdown');
-      app.use('body_parser');
-      app.use('cookie_parser');
-      app.use('static_server');
 
       // Load extensions in lib/
       app.libExtensions();
-
     }
   }
 
@@ -661,6 +676,13 @@ module.exports = protos.app;
 </code></pre>
 
 <p>Here&rsquo;s a detailed explanation of the several configuration sections:</p>
+
+<h3>Application Configuration</h3>
+
+<ul>
+<li><strong>debugLog</strong> &nbsp; <em>If set to true, will print debugging messages to stdout</em></li>
+</ul>
+
 
 <h3>Server Configuration</h3>
 

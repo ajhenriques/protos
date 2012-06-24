@@ -301,7 +301,7 @@ the <code>error_log</code> event is automatically emitted with the error in ques
 <h3>Configuration Options</h3>
 
 <ul>
-<li><strong>accessLog</strong> &nbsp; <em>If set to true (default), will save requests to the access.log file</em></li>
+<li><strong>accessLogFile</strong> &nbsp; <em>Specifies the file to use to store the request logs</em></li>
 <li><strong>accessLogConsole</strong> &nbsp; <em>If set to true (default), will log requests to the console</em></li>
 <li><strong>accessLogFormat</strong> &nbsp; <em>Function to use to format the logs</em></li>
 </ul>
@@ -344,16 +344,6 @@ critical_log
 </code></pre>
 
 <p>You can hook your own functions to manage the logs sent to each level.</p>
-
-<h3>Log Locations</h3>
-
-<pre><code>  Info log:   log/info.log
- Error log:   log/error.log
-Access log:   log/access.log
-</code></pre>
-
-<p>By default, the path is relative to the application&rsquo;s log/ directory. You can also specify absolute paths for
-logs using the file transport.</p>
 
 <h2>response_cache</h2>
 

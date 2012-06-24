@@ -39,12 +39,8 @@
 <div id="content"><div class="ovf">
 
 <p>Protos is an open source Web Application Development framework, focused on high performance, integration, ease of
-deployment, maintainability and security.</p>
-
-<p>It aims to integrate several open source packages and combine their power &amp; functionality, to bring a common set of
-utilities and functionality to all applications, reducing their dependencies.</p>
-
-<p>Protos runs on UNIX-like systems such as <strong>Linux</strong> &amp; <strong>Mac OSX</strong>. Windows support might be added in the future.</p>
+deployment, maintainability and security. Protos runs on UNIX-like systems such as <strong>Linux</strong> &amp; <strong>Mac OSX</strong>. Windows
+support might be added in the future.</p>
 
 <h2>Features</h2>
 
@@ -122,29 +118,35 @@ means you can use a database backend for development, and another for production
 </ul>
 
 
+<p>To install the driver &amp; storage component dependencies, use the <code>protos install &lt;component&gt;</code> command. For a full list of components and
+their dependencies, see the <a href="https://github.com/derdesign/protos/blob/master/dependencies.json">dependencies.json</a> file.</p>
+
 <h2>Middleware</h2>
 
 <p>The Application&rsquo;s functionality can be extended with the following (ready to use) components:</p>
 
 <ul>
-<li><a href="middleware.html#asset_compiler">asset_compiler</a> &nbsp; <em>Compiles LESS, Stylus and CoffeeScript, Supports Watch/Compress/Minify.</em></li>
-<li><a href="middleware.html#aws">aws</a> &nbsp; <em>Amazon Web Services support. Provides clients to all services (ES3, EC2, etc)</em></li>
-<li><a href="middleware.html#bcrypt">bcrypt</a> &nbsp; <em>Blowfish encryption support</em></li>
-<li><a href="middleware.html#body_parser">body_parser</a> &nbsp; <em>Parse request bodies and file uploads in POST/PUT requests</em></li>
-<li><a href="middleware.html#cookie_parser">cookie_parser</a> &nbsp; <em>Parse cookie headers, Integrates with Sessions &amp; Auth</em></li>
-<li><a href="middleware.html#csrf">csrf</a> &nbsp; <em>Cross-Site Request Forgery protection, integrates with Controller Validation</em></li>
-<li><a href="middleware.html#logger">logger</a> &nbsp; <em>Application/Request logger, supporting several transports such as MongoDB, Redis, File &amp; console</em></li>
-<li><a href="middleware.html#mailer">mailer</a> &nbsp; <em>Send email using SMTP, Amazon SES or Sendmail</em></li>
-<li><a href="middleware.html#markdown"> markdown </a> &nbsp; <em>Parse markdown syntax</em></li>
-<li><a href="middleware.html#production_url">production_url</a> &nbsp; <em>Remove port number from application-generated URLs</em></li>
-<li><a href="middleware.html#redirect">redirect</a> &nbsp; <em>Quick redirection support (useful for &ldquo;maintenance mode&rdquo;)</em></li>
-<li><a href="middleware.html#response_cache">response_cache</a> &nbsp; <em>Response caching into supported Storages (Redis, MongoDB, etc)</em></li>
-<li><a href="middleware.html#session">session</a> &nbsp; <em>Full session support with Storages, guest sessions and regeneration</em></li>
-<li><a href="middleware.html#shortcode">shortcode</a> &nbsp; <em>Allows custom content to be inserted into views using shortcodes</em></li>
-<li><a href="middleware.html#socket_io">socket_io</a> &nbsp; <em>Socket.io Integration with applications</em></li>
-<li><a href="middleware.html#static_server">static_server</a> &nbsp; <em>Complete Static Server solution, supporting Ranges, Conditional GETs, etc.</em></li>
+<li><a href="/middleware#asset_compiler">asset_compiler</a> &nbsp; <em>Compiles LESS, Stylus and CoffeeScript, Supports Watch/Compress/Minify.</em></li>
+<li><a href="http://protos.org/middleware#aws">aws</a> &nbsp; <em>Amazon Web Services support. Provides clients to all services (ES3, EC2, etc)</em></li>
+<li><a href="http://protos.org/middleware#bcrypt">bcrypt</a> &nbsp; <em>Blowfish encryption support</em></li>
+<li><a href="http://protos.org/middleware#body_parser">body_parser</a> &nbsp; <em>Parse request bodies and file uploads in POST/PUT requests</em></li>
+<li><a href="http://protos.org/middleware#cookie_parser">cookie_parser</a> &nbsp; <em>Parse cookie headers, Integrates with Sessions &amp; Auth</em></li>
+<li><a href="http://protos.org/middleware#csrf">csrf</a> &nbsp; <em>Cross-Site Request Forgery protection, integrates with Controller Validation</em></li>
+<li><a href="http://protos.org/middleware#logger">logger</a> &nbsp; <em>Application/Request logger, supporting several transports such as MongoDB, Redis, File &amp; console</em></li>
+<li><a href="http://protos.org/middleware#mailer">mailer</a> &nbsp; <em>Send email using SMTP, Amazon SES or Sendmail</em></li>
+<li><a href="http://protos.org/middleware#markdown"> markdown </a> &nbsp; <em>Parse markdown syntax</em></li>
+<li><a href="http://protos.org/middleware#production_url">production_url</a> &nbsp; <em>Remove port number from application-generated URLs</em></li>
+<li><a href="http://protos.org/middleware#redirect">redirect</a> &nbsp; <em>Quick redirection support (useful for &ldquo;maintenance mode&rdquo;)</em></li>
+<li><a href="http://protos.org/middleware#response_cache">response_cache</a> &nbsp; <em>Response caching into supported Storages (Redis, MongoDB, etc)</em></li>
+<li><a href="http://protos.org/middleware#session">session</a> &nbsp; <em>Full session support with Storages, guest sessions and regeneration</em></li>
+<li><a href="http://protos.org/middleware#shortcode">shortcode</a> &nbsp; <em>Allows custom content to be inserted into views using shortcodes</em></li>
+<li><a href="http://protos.org/middleware#socket_io">socket_io</a> &nbsp; <em>Socket.io Integration with applications</em></li>
+<li><a href="http://protos.org/middleware#static_server">static_server</a> &nbsp; <em>Complete Static Server solution, supporting Ranges, Conditional GETs, etc.</em></li>
 </ul>
 
+
+<p>To install the middleware dependencies, use the <code>protos install &lt;middleware&gt;</code> command. For a full list of components and
+their dependencies, see the <a href="https://github.com/derdesign/protos/blob/master/dependencies.json">dependencies.json</a> file.</p>
 
 <h2>Template Engines</h2>
 
@@ -158,7 +160,7 @@ nature), such as Hogan and Handlebars.</p>
 <p>You are not limited by the default view extensions the framework provides. You can specify your own view extensions in the
 application&rsquo;s configuration.</p>
 
-<p>The following view engines are fully integrated with the Framework:</p>
+<p>The following view engine components are provided by protos:</p>
 
 <ul>
 <li><a href="https://github.com/mauricemach/coffeekup">CoffeeKup</a></li>
@@ -180,13 +182,15 @@ application&rsquo;s configuration.</p>
 </ul>
 
 
+<p>To install the engine dependencies, use the <code>protos install &lt;engine&gt;</code> command. For a full list of components and
+their dependencies, see the <a href="https://github.com/derdesign/protos/blob/master/dependencies.json">dependencies.json</a> file.</p>
+
 <h2>Resources</h2>
 
 <ul>
 <li>Follow <a href="http://twitter.com/derdesign">@derdesign</a> on Twitter for updates.</li>
-<li>This site has been developed using Protos, check out <a href="http://github.com/derdesign/protos-docs">its source</a>.</li>
 <li>Report issues on the <a href="https://github.com/derdesign/protos/issues">github issues</a> page.</li>
-<li>For Support, refer to the <a href="https://groups.google.com/group/protos-web-framework">Mailing List</a>.</li>
+<li>For support, refer to the <a href="https://groups.google.com/group/protos-web-framework">Mailing List</a>.</li>
 </ul>
 
 
